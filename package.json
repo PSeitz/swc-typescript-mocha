@@ -4,7 +4,7 @@
   "description": "example project showing mocha typescript integration via swc",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha tests/**/*.spec.ts -r @swc/register -extension ts"
   },
   "keywords": [
     "mocha",
