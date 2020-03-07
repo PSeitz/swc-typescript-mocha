@@ -1,0 +1,35 @@
+{
+  "name": "swc-typescript-mocha",
+  "version": "1.0.0",
+  "description": "example project showing mocha typescript integration via swc",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "mocha",
+    "ts",
+    "typescript",
+    "swc",
+    "babel",
+    "ts-node"
+  ],
+  "author": "Pascal Seitz",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-typescript": "^7.8.3",
+    "@babel/register": "^7.8.6",
+    "@swc/cli": "^0.1.23",
+    "@swc/core": "^1.1.33",
+    "@swc/register": "^0.1.6",
+    "@types/chai": "^4.2.10",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.9.0",
+    "chai": "^4.2.0",
+    "mocha": "^7.1.0",
+    "typescript": "^3.8.3"
+  }
+}
