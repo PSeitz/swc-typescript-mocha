@@ -5,7 +5,73 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+          "name": "Current TS File - Precompiled with tsc",
+          "type": "node",
+          "request": "launch",
+          "program": "${workspaceFolder}/src/index.ts",
+          "outFiles": ["${workspaceFolder}/out/**/*.js"],
+          // "preLaunchTask": "tsc: build - tsconfig.json",
+          "sourceMaps": true,
+          "protocol": "inspector",
+          "smartStep": true,
+        },
+        {
+          "name": "Current TS File - OnTheFly Babel",
+          "type": "node",
+          "request": "launch",
+          "args": ["${relativeFile}"],
+          "runtimeArgs": ["--nolazy", "-r", "${workspaceRoot}/tests/babel-register.js"],
+          "sourceMaps": true,
+          "cwd": "${workspaceRoot}",
+          "protocol": "inspector",
+          "smartStep": true,
+        },
+        {
+          "name": "Current TS File - OnTheFly Babel Custom",
+          "type": "node",
+          "request": "launch",
+          "args": ["${relativeFile}"],
+          "runtimeArgs": ["--nolazy", "-r", "${workspaceRoot}/tests/babel-register-custom.js"],
+          "sourceMaps": true,
+          "cwd": "${workspaceRoot}",
+          "protocol": "inspector",
+          "smartStep": true,
+        },
+        {
+          "name": "Current TS File - OnTheFly Swc Custom",
+          "type": "node",
+          "request": "launch",
+          "args": ["${relativeFile}"],
+          "runtimeArgs": ["--nolazy", "-r", "${workspaceRoot}/tests/swc-register.js"],
+          "sourceMaps": true,
+          "cwd": "${workspaceRoot}",
+          "protocol": "inspector",
+          "smartStep": true,
+        },
+        {
+          "name": "Current TS File - OnTheFly Swc",
+          "type": "node",
+          "request": "launch",
+          "args": ["${relativeFile}"],
+          "runtimeArgs": ["--nolazy", "-r", "@swc/register"],
+          "sourceMaps": true,
+          "cwd": "${workspaceRoot}",
+          "protocol": "inspector",
+          "smartStep": true,
+        },
+        {
+          "type": "node",
+          "request": "launch",
+          "name": "Launch ts program with swc",
+          "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+          "program": "${workspaceFolder}/src/index.ts",
+          //   "console": "integratedTerminal",
+          "internalConsoleOptions": "neverOpen",
+          "cwd": "${workspaceRoot}",
+          "protocol": "inspector",
+        },
+        {
+          "type": "node",
           "request": "launch",
           "name": "Mocha Tests swc",
           "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
@@ -20,17 +86,17 @@
         },
         {
           "type": "node",
-        "request": "launch",
-        "name": "Mocha Tests babel",
-        "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-        "args": [
-            "tests/**/*.spec.ts",
-            "-r",
-            "tests/babel-register.js",
-            "--colors"
-        ],
-          //   "console": "integratedTerminal",
-        "internalConsoleOptions": "neverOpen"
-      }
+          "request": "launch",
+          "name": "Mocha Tests babel",
+          "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+          "args": [
+              "tests/**/*.spec.ts",
+              "-r",
+              "tests/babel-register.js",
+              "--colors"
+          ],
+            //   "console": "integratedTerminal",
+          "internalConsoleOptions": "neverOpen"
+        }
     ]
 }
